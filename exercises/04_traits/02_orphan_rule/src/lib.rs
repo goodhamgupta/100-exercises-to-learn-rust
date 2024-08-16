@@ -4,8 +4,13 @@
 //  Look at the compiler error to get familiar with what it looks like.
 //  Then delete the code below and move on to the next exercise.
 
-impl PartialEq for u32 {
-    fn eq(&self, _other: &Self) -> bool {
-        todo!()
-    }
-}
+// Added this later. Now it works since the trait is defined in the same crate.
+// trait PartialEq {
+//     fn eq(&self, _other: &Self) -> bool;
+// }
+// 
+// impl PartialEq for u32 {
+//     fn eq(&self, _other: &Self) -> bool {
+//         todo!()
+//     }
+// }
