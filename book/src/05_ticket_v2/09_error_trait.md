@@ -2,12 +2,12 @@
 
 ## Error reporting
 
-In the previous exercise you had to destructure the `InvalidTitle` variant to extract the error message and
+In the previous exercise you had to destructure the `TitleError` variant to extract the error message and
 pass it to the `panic!` macro.\
 This is a (rudimentary) example of **error reporting**: transforming an error type into a representation that can be
 shown to a user, a service operator, or a developer.
 
-It's not practical for each Rust developer to come up with their own error reporting strategy: it'd a waste of time
+It's not practical for each Rust developer to come up with their own error reporting strategy: it'd be a waste of time
 and it wouldn't compose well across projects.
 That's why Rust provides the `std::error::Error` trait.
 
@@ -22,7 +22,7 @@ that implements the `Error` trait.
 pub trait Error: Debug + Display {}
 ```
 
-You might recall the `:` syntax from [the `Sized` trait](../04_traits/08_sized.md)—it's used to specify **supertraits**.
+You might recall the `:` syntax from [the `From` trait](../04_traits/09_from.md#supertrait--subtrait)—it's used to specify **supertraits**.
 For `Error`, there are two supertraits: `Debug` and `Display`. If a type wants to implement `Error`, it must also
 implement `Debug` and `Display`.
 

@@ -28,8 +28,7 @@ project and on [exercism.io](https://exercism.io)'s Rust track.
 Check out [the Rust book](https://doc.rust-lang.org/book/title-page.html) and
 ["Programming Rust"](https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/)
 if you're looking for a different perspective on the same concepts we covered throughout this course.
-The material doesn't overlap perfectly, therefore you'll certainly learn something new along the
-way.
+You'll certainly learn something new since they don't cover exactly the same topics; Rust has a lot of surface area!
 
 ### Advanced material
 
@@ -49,5 +48,5 @@ check out the [Embedded Rust book](https://docs.rust-embedded.org/book/).
 
 You can then find resources on key topics that cut across domains.\
 For testing, check out
-["Advanced testing, going beyond the basics"](https://github.com/mainmatter/rust-advanced-testing-workshop).\
-For telemetry, check out ["You can't fix what you can't see"](https://github.com/mainmatter/rust-telemetry-workshop).
+["Advanced testing, going beyond the basics"](https://rust-exercises.com/advanced-testing/).\
+For telemetry, check out ["You can't fix what you can't see"](https://rust-exercises.com/telemetry/).
