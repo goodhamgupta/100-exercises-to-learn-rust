@@ -6,6 +6,8 @@
 // You also need to add a `get` method that takes as input a `TicketId`
 // and returns an `Option<&Ticket>`.
 
+extern crate rand;
+use rand::Rng;
 use ticket_fields::{TicketDescription, TicketTitle};
 
 #[derive(Clone)]
@@ -44,8 +46,20 @@ impl TicketStore {
         }
     }
 
-    pub fn add_ticket(&mut self, ticket: Ticket) {
+    pub fn add_ticket(&mut self, ticket_draft: TicketDraft) -> TicketId {
+        let ticket_id: u64 = rand::thread_rng().gen_range(0..100000);
+        let ticket = Ticket {
+            title: ticket_draft.title,
+            description: ticket_draft.description,
+            id: TicketId(ticket_id),
+            status: Status::ToDo,
+        };
         self.tickets.push(ticket);
+        TicketId(ticket_id)
+    }
+
+    pub fn get(&self, ticket_id: TicketId) -> Option<&Ticket> {
+        self.tickets.iter().filter(|obj| obj.id == ticket_id).last()
     }
 }
 
