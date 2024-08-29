@@ -14,7 +14,7 @@ fn insert_works() {
     };
     let command = Command::Insert {
         draft: draft.clone(),
-        response_sender,
+        sender: response_sender,
     };
 
     sender
@@ -28,7 +28,7 @@ fn insert_works() {
     let (response_sender, response_receiver) = std::sync::mpsc::channel();
     let command = Command::Get {
         id: ticket_id,
-        response_sender,
+        sender: response_sender,
     };
     sender
         .send(command)
