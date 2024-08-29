@@ -70,6 +70,16 @@ impl std::ops::Add<&u16> for SaturatingU16 {
     }
 }
 
+impl std::ops::Add<&SaturatingU16> for SaturatingU16 {
+    type Output = SaturatingU16;
+
+    fn add(self, other: &SaturatingU16) -> Self::Output {
+        Self {
+            value: self.value.saturating_add(other.value)
+        }
+    }
+}
+
 impl PartialEq<u16> for SaturatingU16 {
 
     fn eq(&self, other_value: &u16) -> bool {
